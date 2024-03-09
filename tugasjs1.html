@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        body{
+            background-color: bisque;    
+        }
+        thead{
+            background-color: aquamarine;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="text-align: center;">Data Pegawai</h3>
+
+    <table border="1" align="center" cellpadding="10" cellspacing="0" width="80%">
+        <thead>
+            <tr>
+                <th>Nama Pegawai</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan Keluarga</th>
+            </tr>    
+        </thead>
+
+        <tbody>
+            <script>
+                var nama = "Ridwan";
+                var jabatan = "Manager";
+                var status = "Menikah";
+                var gajipokok = 0;
+                var tunjangan_jabatan = 0;
+                var bpjs = 0;
+                var tunjangan_keluarga = 0;
+                var totalgaji = 0;
+
+                // Hitung gaji pokok berdasarkan jabatan
+                if (jabatan === "Manager") {
+                    gajipokok = 15000000; // 15 jt
+                } else if (jabatan === "Asisten Manager") {
+                    gajipokok = 10000000; // 10 jt
+                } else if (jabatan === "Staff") {
+                    gajipokok = 5000000; // 5 jt
+                }
+
+                // Hitung tunjangan jabatan
+                tunjangan_jabatan = 0.15 * gajipokok;
+
+                // Hitung BPJS
+                bpjs = 0.10 * gajipokok;
+
+                // Hitung tunjangan keluarga
+                tunjangan_keluarga = (status === "Menikah") ? 0.20 * gajipokok : 0;
+
+                // Hitung total gaji
+                totalgaji = gajipokok + tunjangan_jabatan - bpjs + tunjangan_keluarga;
+
+                // Menampilkan data pada tabel
+                document.write("<tr>");
+                document.write("<td>" + nama + "</td>");
+                document.write("<td>" + jabatan + "</td>");
+                document.write("<td>" + status + "</td>");
+                document.write("<td>" + gajipokok + "</td>");
+                document.write("<td>" + tunjangan_jabatan + "</td>");
+                document.write("<td>" + bpjs + "</td>");
+                document.write("<td>" + tunjangan_keluarga + "</td>");                
+                document.write("</tr>");
+            </script>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="6" style="text-align: center;">Total Gaji:</th>
+                <td style="text-align: center;" id="totalGaji"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        // Masukkan nilai totalgaji ke dalam elemen dengan id "totalGaji"
+        document.getElementById("totalGaji").innerHTML = totalgaji;
+    </script>
+
+</body>
+</html>
