@@ -16,6 +16,9 @@
         td{
             text-align: center;
         }
+        tfoot{
+            background-color: aquamarine;
+        }
     </style>
 </head>
 <body>
@@ -76,21 +79,13 @@
                 document.write("<td>" + bpjs + "</td>");
                 document.write("<td>" + tunjangan_keluarga + "</td>");                
                 document.write("</tr>");
+                document.write("<tfoot><tr><th colspan=6> Togal Gaji :</th> <td>" + totalgaji + "</td></tr></tfoot> ");
+
+
             </script>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <th colspan="6" style="text-align: center;">Total Gaji:</th>
-                <td style="text-align: center;" id="totalGaji"></td>
-            </tr>
         </tfoot>
-    </table>
 
-    <script>
-        // Masukkan nilai totalgaji ke dalam elemen dengan id "totalGaji"
-        document.getElementById("totalGaji").innerHTML = totalgaji;
-    </script>
+    </table>
 
 </body>
 </html>
