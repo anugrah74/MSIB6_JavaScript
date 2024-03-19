@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Pegawai</title>
+  <style>
+    table {
+      width: 50%;
+      margin: auto;
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <form id="frmInput">
+    <table style="width: 100%; background-color: bisque;">
+      <tr>
+        <th colspan="2">FORM INPUT</th>
+      </tr>
+      <tr>
+        <td><label for="nama">Nama</label></td>
+        <td><input type="text" name="nama" id="nama" placeholder="Masukkan nama anda"></td>
+      </tr>
+      <tr>
+        <td><label for="jabatan">Jabatan</label></td>
+        <td>
+          <select name="jabatan" id="jabatan"> 
+            <option value="Manager">Manager</option>
+            <option value="Asisten Manager">Asisten Manager</option>
+            <option value="Staff">Staff</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="status">Status</label></td>
+        <td>
+          <select name="status" id="status">
+            <option value="menikah">Menikah</option>
+            <option value="belum">Belum Menikah</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" >
+          <button type="button" onclick="submitForm()" >Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <table id="pegawaiTable" style="width: 100%; margin-top: 20px; display: none;">
+    <thead>
+      <tr>
+        <th>Nama Pegawai</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan Jabatan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+        <th>Total Gaji</th>
+      </tr>
+    </thead>
+    <tbody id="pegawaiBody">
+      <!-- Data pegawai akan ditambahkan oleh JavaScript -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="7">Total Gaji</td>
+        <td id="totalGaji"></td>
+      </tr>
+    </tfoot>
+  </table>
+  
+  <script src="js/pegawai.js"></script>
+</body>
+</html>
