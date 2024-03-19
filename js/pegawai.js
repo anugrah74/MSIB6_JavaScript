@@ -1,25 +1,25 @@
 class Pegawai {
-  constructor(nama, jabatan, gaji, status) {
+  constructor(nama, jabatan, gajipokok, status) {
     this.nama = nama;
     this.jabatan = jabatan;
-    this.gaji = gaji;
+    this.gajipokok = gajipokok;
     this.status = status;
   }
 
   tunjanganJabatan() {
-    return this.gaji * 0.15;
+    return this.gajipokok * 0.15;
   }
 
   bpjs() {
-    return this.gaji * 0.1;
+    return this.gajipokok * 0.1;
   }
 
   tunjanganKeluarga() {
-    return this.status === "menikah" ? this.gaji * 0.2 : 0;
+    return this.status === "menikah" ? this.gajipokok * 0.2 : 0;
   }
 
   totalGaji() {
-    return this.gaji + this.tunjanganJabatan() + this.tunjanganKeluarga() - this.bpjs();
+    return this.gajipokok + this.tunjanganJabatan() + this.tunjanganKeluarga() - this.bpjs();
   }
 }
 
@@ -30,24 +30,18 @@ function submitForm() {
   var status = document.getElementById("status").value;
 
   // Menghitung gaji berdasarkan jabatan
-  var gaji;
-  switch (jabatan) {
-    case "Manager":
-      gaji = 15000000;
-      break;
-    case "Asisten Manager":
-      gaji = 10000000;
-      break;
-    case "Staff":
-      gaji = 5000000;
-      break;
-    default:
-      gaji = 0;
-      break;
-  }
+  var gajipokok;
+  if (jabatan === "Manager") {
+    gajipokok = 15000000; 
+} else if (jabatan === "Asisten Manager") {
+    gajipokok = 10000000; 
+} else if (jabatan === "Staff") {
+    gajipokok = 5000000; 
+}
+
 
   // Membuat objek pegawai
-  var pegawai = new Pegawai(nama, jabatan, gaji, status);
+  var pegawai = new Pegawai(nama, jabatan, gajipokok, status);
 
   // Menambahkan pegawai baru ke dalam tabel
   var tbody = document.getElementById("pegawaiBody");
@@ -67,7 +61,7 @@ function submitForm() {
   namaCell.innerHTML = pegawai.nama;
   jabatanCell.innerHTML = pegawai.jabatan;
   statusCell.innerHTML = pegawai.status;
-  gajiPokokCell.innerHTML = pegawai.gaji;
+  gajiPokokCell.innerHTML = pegawai.gajipokok;
   tunjanganJabatanCell.innerHTML = pegawai.tunjanganJabatan();
   bpjsCell.innerHTML = pegawai.bpjs();
   tunjanganKeluargaCell.innerHTML = pegawai.tunjanganKeluarga();
