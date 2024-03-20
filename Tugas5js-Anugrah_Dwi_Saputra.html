@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<div id="div1">
+    Hewan Bebek
+    <audio id="audio1" src="harimau.mp3"></audio>
+</div>
+<div id="div2">
+    Hewan Kucing
+    <audio id="audio2" src="kiucing-meow.mp3"></audio>
+</div>
+<div id="div3">
+    Entah Banteng dari mana
+    <audio id="audio3" src="Ayam.mp3"></audio>
+</div>
+
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#div1").mouseover(function(){
+            $(this).css({
+                background: "url('https://www.greeners.co/wp-content/uploads/2020/11/Perbedaan-Harimau-dan-Macan-3-min.jpg')",
+            });
+            document.getElementById("audio1").play(); 
+        });
+        
+        $("#div1").mouseout(function(){
+            $(this).css({
+                background: "green"
+            });
+            document.getElementById("audio1").pause();
+            document.getElementById("audio1").currentTime = 0; 
+        });
+        
+        $("#div2").mouseover(function(){
+            $(this).css({
+                background: "url('https://web.rupa.ai/wp-content/uploads/2023/08/aruna3619_A_captivating_image_of_a_Scottish_Fold_cat_its_distin_5a9ee468-ba3b-4e65-bf9a-e2b8372768bd-600x336.png')",
+            });
+            document.getElementById("audio2").play(); 
+        });
+        
+        $("#div2").mouseout(function(){
+            $(this).css({
+                background: "yellow"
+            });
+            document.getElementById("audio2").pause();
+            document.getElementById("audio2").currentTime = 0; 
+        });
+        $("#div3").mouseover(function(){
+            $(this).css({
+                background: "url('https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2021/09/14/5492530-rooster-wallpapersjpg-20210914084656.jpg')",
+            });
+            document.getElementById("audio3").play(); 
+        });
+        
+        $("#div3").mouseout(function(){
+            $(this).css({
+                background: "red"
+            });
+            document.getElementById("audio3").pause();
+            document.getElementById("audio3").currentTime = 0; 
+        });
+    });
+</script>
+</body>
+</html>
