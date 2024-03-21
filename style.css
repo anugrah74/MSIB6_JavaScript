@@ -1,0 +1,80 @@
+body{
+    background-color: #ECF8F9;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+
+}
+fieldset{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+legend{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(0, 250, 12);
+}
+
+#Data{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(248, 0, 0);
+}
+#Data1{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(216, 141, 28);
+}
+#Data2{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(82, 19, 231);
+}
+#Data3{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(32, 247, 12);
+}
+#Data4{
+    font-weight: bold;
+    font-style: oblique;
+    color: rgb(233, 0, 163);
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+marquee{
+    width: 100%;
+    direction: right;
+    color: blue;
+    background-color: aqua;
+}
+tr{
+    padding: 5px;
+    border: 1px solid green;
+}
+tr:hover{
+    background-color: blue;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+table{
+    text-align: center;
+
+
+}
+thead{
+    background-color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+}
+tbody{
+
+    background-color: ivory;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
